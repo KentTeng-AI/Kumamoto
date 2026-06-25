@@ -194,6 +194,48 @@ details[open] summary{border-color:var(--gold);background:#fff}
 .credit-note,.offline-note{font-size:.74rem;margin-top:.6rem;color:#9c9079}
 .offline-note{color:var(--gold)}
 
+/* 深度導讀入口按鈕 */
+.deep-cta{display:block;background:var(--ink);color:var(--washi);border:1px solid var(--gold);
+  border-radius:10px;padding:.8rem 1rem;margin-bottom:1.3rem;font-size:.92rem;text-decoration:none;
+  transition:.2s}
+.deep-cta b{color:var(--gold)}
+.deep-cta:hover{background:#241f1a;text-decoration:none}
+
+/* ===== 歷史專頁 ===== */
+.hist{max-width:820px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.hist-intro{font-size:1rem;color:var(--ink-soft);background:var(--paper);
+  border:1px solid var(--line);border-left:4px solid var(--crimson);
+  padding:1rem 1.1rem;border-radius:0 10px 10px 0;margin-bottom:2rem}
+.hist-block{margin-bottom:2.6rem;scroll-margin-top:60px}
+.hist-block h2{font-family:var(--serif);font-size:1.45rem;letter-spacing:.06em;color:var(--ink);
+  padding-bottom:.45rem;margin-bottom:.9rem;position:relative}
+.hist-block h2 .num{color:var(--gold-deep);font-size:1rem;margin-right:.5rem}
+.hist-block h2::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:3px;
+  background:linear-gradient(90deg,var(--gold),transparent)}
+.hist-block h3{font-family:var(--serif);font-size:1.1rem;color:var(--crimson);margin:1.2rem 0 .4rem}
+.hist-block p{margin-bottom:.85rem;font-size:.96rem}
+.hist-fig{margin:1rem 0 1.2rem;border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  background:var(--paper)}
+.hist-fig img{width:100%;display:block;max-height:460px;object-fit:cover}
+.hist-fig.portrait img{max-height:420px;object-fit:contain;background:#efe7d6;padding:.4rem}
+.hist-fig figcaption{font-size:.76rem;color:var(--muted);padding:.45rem .7rem;background:var(--paper)}
+.hist-fig figcaption b{color:var(--ink-soft);font-family:var(--serif)}
+/* 典故小卡 */
+.lore{background:#fbf3df;border:1px solid var(--gold);border-radius:10px;padding:.85rem 1rem;
+  margin:1rem 0;font-size:.92rem}
+.lore .lore-t{font-family:var(--serif);font-weight:700;color:var(--gold-deep);display:block;margin-bottom:.3rem}
+/* 名言 */
+.famous{font-family:var(--serif);font-size:1.15rem;line-height:1.9;color:var(--ink);
+  background:linear-gradient(180deg,#fff,#faf4e8);border-left:5px solid var(--crimson);
+  padding:1.1rem 1.2rem;border-radius:0 10px 10px 0;margin:1.2rem 0}
+.famous cite{display:block;font-size:.85rem;color:var(--muted);font-style:normal;margin-top:.6rem;text-align:right}
+/* 人物列（圖左文右） */
+.figrow{display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap}
+.figrow .hist-fig{flex:0 0 200px;margin:.3rem 0}
+.figrow .figrow-text{flex:1;min-width:240px}
+.back-link{display:inline-block;margin:.2rem 0 1rem;font-size:.9rem}
+@media(max-width:560px){.figrow .hist-fig{flex:1 1 100%}}
+
 @media(max-width:520px){
   .topnav a{margin-left:.6rem;font-size:.82rem}
   .hero{height:54vh}

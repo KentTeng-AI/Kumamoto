@@ -1,8 +1,9 @@
 /* 熊本城 深度導覽 — Service Worker（離線快取）*/
-var CACHE = "kumamoto-guide-v2";
+var CACHE = "kumamoto-guide-v3";
 var ASSETS = [
   "./",
   "./index.html",
+  "./history.html",
   "./css/style.css",
   "./js/app.js",
   "./data/spots.js",
@@ -19,7 +20,12 @@ var ASSETS = [
   "./images/wakuwakuza.jpg",
   "./images/tokubetsu.jpg",
   "./images/niyou.jpg",
-  "./images/kuragari.jpg"
+  "./images/kuragari.jpg",
+  "./images/kato_kiyomasa.jpg",
+  "./images/musashi.jpg",
+  "./images/saigo.jpg",
+  "./images/shachihoko.jpg",
+  "./images/honmaru_goten.jpg"
 ];
 
 self.addEventListener("install", function (e) {
