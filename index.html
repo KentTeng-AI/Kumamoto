@@ -3,173 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>熊本城 歷史與典故 ｜ 出發前的深度導讀</title>
-<meta name="description" content="熊本城深度歷史導讀：加藤清正築城、銀杏城與武者返し、昭君之間的秘密、宮本武蔵、西南戰爭與不落之城、見せる復興。圖文並茂，出發前先讀懂故事。">
+<title>熊本城 ｜ 四百年の物語</title>
+<meta name="description" content="熊本城四百年的故事：加藤清正築城、銀杏城與武者返し、昭君之間的秘密、宮本武蔵、西南戰爭與不落之城、見せる復興。敘事式滾動導讀，讀完故事再去走一遍。">
 <meta name="theme-color" content="#1a1a1a">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon.svg">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="story">
 
+<!-- 閱讀進度條 -->
+<div class="scroll-progress"><div id="sp-fill"></div></div>
+
+<!-- 頂部導覽 -->
 <header class="topbar">
-  <span class="brand">熊本城<span class="brand-sub">歷史與典故</span></span>
+  <span class="brand">熊本城<span class="brand-sub">四百年の物語</span></span>
   <nav class="topnav">
-    <a href="index.html">導覽首頁</a>
-    <a href="index.html#spots">景點</a>
-    <a href="index.html#routes">路線</a>
+    <a href="#intro">故事</a>
+    <a href="guide.html" class="nav-cta">開始規劃行程 →</a>
   </nav>
 </header>
 
-<section class="hero" style="height:46vh;min-height:280px">
+<!-- 章節導覽圓點 -->
+<nav class="chapter-dots" id="dots" aria-label="章節導覽"></nav>
+
+<!-- 全幅封面 -->
+<section class="cover" id="top">
   <div class="hero-img" style="background-image:url('images/hero_tenshu.jpg')"></div>
-  <div class="hero-overlay">
-    <p class="kana">四百年の物語</p>
-    <h1 style="font-size:clamp(2.2rem,9vw,4rem)">歷史與典故</h1>
-    <p class="hero-tag">出發前，先讀懂這座城的故事</p>
+  <div class="cover-overlay">
+    <p class="kana">よんひゃくねん の ものがたり</p>
+    <h1>熊本城</h1>
+    <p class="cover-tag">黑色名城 ・ 不落之城 ・ 見せる復興</p>
+    <a class="scroll-hint" href="#intro">向下開始這座城的故事<span>↓</span></a>
   </div>
+  <p class="hero-credit">攝影 663highland / CC BY-SA 3.0</p>
 </section>
 
-<article class="hist">
-  <a class="back-link" href="index.html">← 回導覽首頁</a>
-
-  <p class="hist-intro">
+<!-- 引言 -->
+<section class="story-chapter hist-block" id="intro" data-label="序章">
+  <p class="hist-intro reveal">
     熊本城不只是一座漂亮的城。它是築城名手<strong>加藤清正</strong>畢生武略與土木智慧的結晶，
     歷經<strong>細川家</strong>的文治、劍聖<strong>宮本武蔵</strong>的晚年、<strong>西南戰爭</strong>的烽火，
     再到<strong>2016 熊本地震</strong>後的「見せる復興」。讀完這頁，你在現場看到的每一道石垣、每一座櫓，都會多出一段故事。
   </p>
+  <p class="reveal" style="color:var(--muted);font-size:.9rem">
+    👉 每段故事的結尾，都有一張通往現場景點的卡片——讀完，就去走一遍。
+  </p>
+</section>
 
-  <!-- 1 加藤清正 -->
-  <section class="hist-block" id="kiyomasa">
-    <h2><span class="num">壹</span>築城者・加藤清正</h2>
-    <div class="figrow">
-      <figure class="hist-fig portrait">
-        <img loading="lazy" src="images/kato_kiyomasa.jpg" alt="加藤清正像">
-        <figcaption><b>加藤清正</b>（1562–1611）／Public Domain・Wikimedia Commons</figcaption>
-      </figure>
-      <div class="figrow-text">
-        <p>加藤清正出身尾張，自幼追隨豐臣秀吉，於賤ヶ岳之戰嶄露頭角，名列「<strong>賤ヶ岳七本槍</strong>」。文禄・慶長之役（出兵朝鮮）中，留下「<strong>虎退治（打虎）</strong>」的傳說，更在蔚山城以寡敵眾、苦守籠城——這段死守的慘烈經驗，深深影響了他日後築城的思想。</p>
-        <p>他 27 歲入主肥後北半國，既是猛將，也是傑出的土木與治水專家，被後世尊為「<strong>築城名人</strong>」與「<strong>治水之神</strong>」。慶長 6 年（1601）動工、約慶長 12 年（1607）完成今日的熊本城。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2 籠城思想 -->
-  <section class="hist-block" id="rojo">
-    <h2><span class="num">貳</span>為「死守」而生的城</h2>
-    <p>清正把蔚山籠城的教訓全寫進了熊本城。整座城就是一部「如何撐過長期圍城」的教科書——這也是它最迷人的地方。</p>
-    <div class="lore">
-      <span class="lore-t">典故・銀杏城</span>
-      城內遍植銀杏，傳說天守前的大銀杏為清正親手所植（<b>お手植え</b>），故熊本城別名「<strong>銀杏城</strong>」。據傳清正曾說：當這棵銀杏長到與天守同高時，城將有事——而西南戰爭爆發時，銀杏恰好長到天守高度，天守也在那年燒失，成為流傳至今的奇談。
-    </div>
-    <div class="lore">
-      <span class="lore-t">典故・籠城的執念</span>
-      為了長期固守，城內鑿了傳說多達 <strong>120 口井</strong>確保水源；更有「<strong>榻榻米的芯用芋莖（ずいき）、牆土摻入干瓢（かんぴょう）</strong>」之說——必要時可拆下食用充飢。真偽難考，卻生動道出清正籠城思想的徹底。
-    </div>
-    <figure class="hist-fig">
-      <img loading="lazy" src="images/niyou.jpg" alt="熊本城石垣">
-      <figcaption><b>武者返し・清正流石垣</b>／攝影 Mukai・CC BY-SA 3.0</figcaption>
+<!-- 1 加藤清正 -->
+<section class="story-chapter hist-block" id="kiyomasa" data-label="築城者">
+  <h2 class="reveal"><span class="num">壹</span>築城者・加藤清正</h2>
+  <div class="figrow reveal">
+    <figure class="hist-fig portrait">
+      <img loading="lazy" src="images/kato_kiyomasa.jpg" alt="加藤清正像">
+      <figcaption><b>加藤清正</b>（1562–1611）／Public Domain・Wikimedia Commons</figcaption>
     </figure>
-    <p>最具代表的防禦工藝，就是俗稱「<strong>武者返し</strong>」的石垣。底部坡度平緩、看似好爬，越往上反翹越急、近乎垂直的「<strong>扇之勾配</strong>」，讓武士甚至身手矯健的忍者都爬不上去，故得此名。現場抬頭看石垣頂端那道優美的弧線，就是清正流石垣的精髓。</p>
-  </section>
-
-  <!-- 3 天守與鯱 -->
-  <section class="hist-block" id="tenshu">
-    <h2><span class="num">參</span>黑色名城・大小天守</h2>
-    <div class="figrow">
-      <figure class="hist-fig portrait">
-        <img loading="lazy" src="images/shachihoko.jpg" alt="熊本城鯱">
-        <figcaption><b>鯱（しゃちほこ）</b>／攝影 Mukai・CC BY-SA 3.0</figcaption>
-      </figure>
-      <div class="figrow-text">
-        <p>大天守與小天守並立，外牆覆以黑色「<strong>下見板張</strong>」，在陽光下沉穩內斂，正是「<strong>黑色名城</strong>」之名的由來，與白壁的「白鷺城」姬路城恰成對比。</p>
-        <p>屋脊兩端的金色「<strong>鯱（しゃちほこ）</strong>」是虎頭魚身的想像生物，相傳能噴水滅火，是城的守護與威儀的象徵。熊本城與名古屋城、大阪城（一說姬路城）並稱「<strong>日本三名城</strong>」。</p>
-      </div>
+    <div class="figrow-text">
+      <p>加藤清正出身尾張，自幼追隨豐臣秀吉，於賤ヶ岳之戰嶄露頭角，名列「<strong>賤ヶ岳七本槍</strong>」。文禄・慶長之役（出兵朝鮮）中，留下「<strong>虎退治（打虎）</strong>」的傳說，更在蔚山城以寡敵眾、苦守籠城——這段死守的慘烈經驗，深深影響了他日後築城的思想。</p>
+      <p>他 27 歲入主肥後北半國，既是猛將，也是傑出的土木與治水專家，被後世尊為「<strong>築城名人</strong>」與「<strong>治水之神</strong>」。慶長 6 年（1601）動工、約慶長 12 年（1607）完成今日的熊本城。</p>
     </div>
-  </section>
+  </div>
+  <a class="spot-link reveal" href="guide.html#spot-katojinja">
+    <span class="sl-ico">⛩️</span>
+    <span class="sl-txt"><b>加藤神社</b>四百年來，清正以「清正公さん」之名長眠城中——這裡能同框仰望天守與宇土櫓。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
 
-  <!-- 4 宇土櫓 -->
-  <section class="hist-block" id="uto">
-    <h2><span class="num">肆</span>第三天守・宇土櫓</h2>
-    <figure class="hist-fig">
-      <img loading="lazy" src="images/uto_tenshu.jpg" alt="宇土櫓與天守">
-      <figcaption><b>宇土櫓（左）與天守</b>／攝影 そらみみ・CC BY-SA 4.0</figcaption>
+<!-- 2 籠城思想 -->
+<section class="story-chapter hist-block" id="rojo" data-label="武者返し">
+  <h2 class="reveal"><span class="num">貳</span>為「死守」而生的城</h2>
+  <p class="reveal">清正把蔚山籠城的教訓全寫進了熊本城。整座城就是一部「如何撐過長期圍城」的教科書——這也是它最迷人的地方。</p>
+  <div class="lore reveal">
+    <span class="lore-t">典故・銀杏城</span>
+    城內遍植銀杏，傳說天守前的大銀杏為清正親手所植（<b>お手植え</b>），故熊本城別名「<strong>銀杏城</strong>」。據傳清正曾說：當這棵銀杏長到與天守同高時，城將有事——而西南戰爭爆發時，銀杏恰好長到天守高度，天守也在那年燒失，成為流傳至今的奇談。
+  </div>
+  <div class="lore reveal">
+    <span class="lore-t">典故・籠城的執念</span>
+    為了長期固守，城內鑿了傳說多達 <strong>120 口井</strong>確保水源；更有「<strong>榻榻米的芯用芋莖（ずいき）、牆土摻入干瓢（かんぴょう）</strong>」之說——必要時可拆下食用充飢。真偽難考，卻生動道出清正籠城思想的徹底。
+  </div>
+  <figure class="hist-fig reveal">
+    <img loading="lazy" src="images/niyou.jpg" alt="熊本城石垣">
+    <figcaption><b>武者返し・清正流石垣</b>／攝影 Mukai・CC BY-SA 3.0</figcaption>
+  </figure>
+  <p class="reveal">最具代表的防禦工藝，就是俗稱「<strong>武者返し</strong>」的石垣。底部坡度平緩、看似好爬，越往上反翹越急、近乎垂直的「<strong>扇之勾配</strong>」，讓武士甚至身手矯健的忍者都爬不上去，故得此名。現場抬頭看石垣頂端那道優美的弧線，就是清正流石垣的精髓。</p>
+  <a class="spot-link reveal" href="guide.html#spot-niyou">
+    <span class="sl-ico">🧱</span>
+    <span class="sl-txt"><b>二様の石垣</b>同一處牆角、兩個時代的石垣並排——一眼讀出加藤流武者返し的扇之勾配。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
+
+<!-- 3 天守與鯱 -->
+<section class="story-chapter hist-block" id="tenshu" data-label="黑色名城">
+  <h2 class="reveal"><span class="num">參</span>黑色名城・大小天守</h2>
+  <div class="figrow reveal">
+    <figure class="hist-fig portrait">
+      <img loading="lazy" src="images/shachihoko.jpg" alt="熊本城鯱">
+      <figcaption><b>鯱（しゃちほこ）</b>／攝影 Mukai・CC BY-SA 3.0</figcaption>
     </figure>
-    <p>在多座櫓中，<strong>宇土櫓</strong>地位特殊：它外觀三層、內部五層，規模媲美一般城的天守，被譽為「<strong>第三天守</strong>」。更難得的是，它是築城當時就留存至今、且<strong>挺過西南戰爭戰火未燒</strong>的真品，屬國指定重要文化財。如今它正進行解體復原（2032 年完工目標），等於我們這代人見證了它最關鍵的一次重生。</p>
-  </section>
+    <div class="figrow-text">
+      <p>大天守與小天守並立，外牆覆以黑色「<strong>下見板張</strong>」，在陽光下沉穩內斂，正是「<strong>黑色名城</strong>」之名的由來，與白壁的「白鷺城」姬路城恰成對比。</p>
+      <p>屋脊兩端的金色「<strong>鯱（しゃちほこ）</strong>」是虎頭魚身的想像生物，相傳能噴水滅火，是城的守護與威儀的象徵。熊本城與名古屋城、大阪城（一說姬路城）並稱「<strong>日本三名城</strong>」。</p>
+    </div>
+  </div>
+  <a class="spot-link reveal" href="guide.html#spot-tenshu">
+    <span class="sl-ico">🏯</span>
+    <span class="sl-txt"><b>天守閣</b>登上 6F 展望層俯瞰全城；逐層展示串起從築城到復興的完整故事。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
 
-  <!-- 5 昭君之間 -->
-  <section class="hist-block" id="shokun">
-    <h2><span class="num">伍</span>本丸御殿與「昭君之間」的秘密</h2>
-    <figure class="hist-fig">
-      <img loading="lazy" src="images/honmaru_goten.jpg" alt="本丸御殿">
-      <figcaption><b>本丸御殿</b>／攝影 そらみみ・CC BY-SA 3.0</figcaption>
+<!-- 4 宇土櫓 -->
+<section class="story-chapter hist-block" id="uto" data-label="第三天守">
+  <h2 class="reveal"><span class="num">肆</span>第三天守・宇土櫓</h2>
+  <figure class="hist-fig reveal">
+    <img loading="lazy" src="images/uto_tenshu.jpg" alt="宇土櫓與天守">
+    <figcaption><b>宇土櫓（左）與天守</b>／攝影 そらみみ・CC BY-SA 4.0</figcaption>
+  </figure>
+  <p class="reveal">在多座櫓中，<strong>宇土櫓</strong>地位特殊：它外觀三層、內部五層，規模媲美一般城的天守，被譽為「<strong>第三天守</strong>」。更難得的是，它是築城當時就留存至今、且<strong>挺過西南戰爭戰火未燒</strong>的真品，屬國指定重要文化財。如今它正進行解體復原（2032 年完工目標），等於我們這代人見證了它最關鍵的一次重生。</p>
+  <a class="spot-link reveal" href="guide.html#spot-uto">
+    <span class="sl-ico">🏛️</span>
+    <span class="sl-txt"><b>宇土櫓</b>目前解體復原中、不可入內，但從加藤神社、二の丸広場仍能遠望它古樸的身影。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
+
+<!-- 5 昭君之間 -->
+<section class="story-chapter hist-block" id="shokun" data-label="昭君之間">
+  <h2 class="reveal"><span class="num">伍</span>本丸御殿與「昭君之間」的秘密</h2>
+  <figure class="hist-fig reveal">
+    <img loading="lazy" src="images/honmaru_goten.jpg" alt="本丸御殿">
+    <figcaption><b>本丸御殿</b>／攝影 そらみみ・CC BY-SA 3.0</figcaption>
+  </figure>
+  <p class="reveal">本丸御殿是藩主理政與生活的殿堂，其中最豪華、格式最高的房間名為「<strong>昭君之間</strong>」，牆面與隔扇繪有中國前漢悲劇美女「<strong>王昭君</strong>」的故事，金碧輝煌。</p>
+  <div class="lore reveal">
+    <span class="lore-t">典故・秀頼傳說</span>
+    有一說認為，「昭君之間」其實是「<strong>將軍之間</strong>」的諧音隱語——清正對豐臣家忠心耿耿，這個華麗的房間（甚至傳有隱藏脫出通道）是為了在危急時<strong>迎接、藏匿豐臣秀吉的遺孤秀頼</strong>而準備的。真相已難考證，卻為這座城添上一層忠義與懸疑的色彩。
+  </div>
+  <a class="spot-link reveal" href="guide.html#spot-kuragari">
+    <span class="sl-ico">🕯️</span>
+    <span class="sl-txt"><b>闇り通路</b>穿過本丸御殿地下的昏暗甬道，從黑暗走向天守前的豁然開朗——登城最具儀式感的一刻。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
+
+<!-- 6 細川與武蔵 -->
+<section class="story-chapter hist-block" id="hosokawa" data-label="細川・武蔵">
+  <h2 class="reveal"><span class="num">陸</span>細川時代與劍聖宮本武蔵</h2>
+  <div class="figrow reveal">
+    <figure class="hist-fig portrait">
+      <img loading="lazy" src="images/musashi.jpg" alt="宮本武蔵自畫像">
+      <figcaption><b>宮本武蔵</b> 自畫像／Public Domain・Wikimedia Commons</figcaption>
     </figure>
-    <p>本丸御殿是藩主理政與生活的殿堂，其中最豪華、格式最高的房間名為「<strong>昭君之間（昭君之間）</strong>」，牆面與隔扇繪有中國前漢悲劇美女「<strong>王昭君</strong>」的故事，金碧輝煌。</p>
-    <div class="lore">
-      <span class="lore-t">典故・秀頼傳說</span>
-      有一說認為，「昭君之間」其實是「<strong>將軍之間</strong>」的諧音隱語——清正對豐臣家忠心耿耿，這個華麗的房間（甚至傳有隱藏脫出通道）是為了在危急時<strong>迎接、藏匿豐臣秀吉的遺孤秀頼</strong>而準備的。真相已難考證，卻為這座城添上一層忠義與懸疑的色彩。
+    <div class="figrow-text">
+      <p>1632 年加藤家改易，<strong>細川忠利</strong>入主熊本，細川氏統治肥後約 240 年、歷 11 代。相較清正的武，細川家帶來了文治與藝術的氣息。</p>
+      <p>晚年的「<strong>劍聖」宮本武蔵</strong>正是受細川家禮遇、客居熊本，在城西的<strong>靈巖洞</strong>閉關寫下兵法名著《<strong>五輪書</strong>》，並終老於此。一座城同時承載猛將清正與劍聖武蔵的身影，正是熊本城故事的厚度所在。</p>
     </div>
-  </section>
+  </div>
+  <a class="spot-link reveal" href="guide.html#spot-sukiya">
+    <span class="sl-ico">🍵</span>
+    <span class="sl-txt"><b>數寄屋丸二階御広間</b>城主舉辦能樂、茶會與連歌的風雅空間——細川時代文治氣息最好的見證。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
 
-  <!-- 6 細川與武蔵 -->
-  <section class="hist-block" id="hosokawa">
-    <h2><span class="num">陸</span>細川時代與劍聖宮本武蔵</h2>
-    <div class="figrow">
-      <figure class="hist-fig portrait">
-        <img loading="lazy" src="images/musashi.jpg" alt="宮本武蔵自畫像">
-        <figcaption><b>宮本武蔵</b> 自畫像／Public Domain・Wikimedia Commons</figcaption>
-      </figure>
-      <div class="figrow-text">
-        <p>1632 年加藤家改易，<strong>細川忠利</strong>入主熊本，細川氏統治肥後約 240 年、歷 11 代。相較清正的武，細川家帶來了文治與藝術的氣息。</p>
-        <p>晚年的「<strong>劍聖」宮本武蔵</strong>正是受細川家禮遇、客居熊本，在城西的<strong>靈巖洞</strong>閉關寫下兵法名著《<strong>五輪書</strong>》，並終老於此。一座城同時承載猛將清正與劍聖武蔵的身影，正是熊本城故事的厚度所在。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7 西南戰爭 -->
-  <section class="hist-block" id="seinan">
-    <h2><span class="num">柒</span>不落之城・西南戰爭</h2>
-    <div class="figrow">
-      <figure class="hist-fig portrait">
-        <img loading="lazy" src="images/saigo.jpg" alt="西郷隆盛">
-        <figcaption><b>西郷隆盛</b>（1828–1877）／Public Domain・Wikimedia Commons</figcaption>
-      </figure>
-      <div class="figrow-text">
-        <p>明治 10 年（1877），西郷隆盛率薩摩軍掀起<strong>西南戰爭</strong>，猛攻熊本城。鎮台司令<strong>谷干城</strong>率軍據城死守，籠城約 <strong>52 日</strong>，薩摩軍始終未能攻破清正所築的堅城。</p>
-        <p>諷刺的是，就在總攻前數日，天守與本丸御殿竟突然<strong>失火燒毀</strong>，是失火還是自燒，至今成謎。</p>
-      </div>
-    </div>
-    <blockquote class="famous">
-      「我並非敗給政府軍，而是敗給了築起這座城的——加藤清正公。」
-      <cite>—— 傳為西郷隆盛兵敗後之語</cite>
-    </blockquote>
-    <p>跨越三百年，清正的籠城智慧仍替後人擋下了千軍萬馬。這句話，正是熊本城「不落之城」威名最好的註腳。</p>
-  </section>
-
-  <!-- 8 信仰 -->
-  <section class="hist-block" id="shinko">
-    <h2><span class="num">捌</span>清正公さん・庶民的信仰</h2>
-    <p>清正不僅築城、治水，更致力於民生，深受肥後百姓愛戴，被親暱地稱為「<strong>清正公さん（せいしょこさん）</strong>」。城內的<strong>加藤神社</strong>即祭祀清正，至今香火鼎盛，是市民祈求勝運與平安之地——四百年來，他從未真正離開這座城與這片土地。</p>
-  </section>
-
-  <!-- 9 復興 -->
-  <section class="hist-block" id="fukko">
-    <h2><span class="num">玖</span>地震與「見せる復興」</h2>
-    <figure class="hist-fig">
-      <img loading="lazy" src="images/iidamaru.png" alt="奇跡の一本石垣">
-      <figcaption><b>飯田丸五階櫓・奇跡の一本石垣</b>／ムカイ・Public Domain</figcaption>
+<!-- 7 西南戰爭 -->
+<section class="story-chapter hist-block" id="seinan" data-label="不落之城">
+  <h2 class="reveal"><span class="num">柒</span>不落之城・西南戰爭</h2>
+  <div class="figrow reveal">
+    <figure class="hist-fig portrait">
+      <img loading="lazy" src="images/saigo.jpg" alt="西郷隆盛">
+      <figcaption><b>西郷隆盛</b>（1828–1877）／Public Domain・Wikimedia Commons</figcaption>
     </figure>
-    <p>2016 年熊本地震重創全城：天守落瓦、石垣崩落約 3 萬㎡、多座櫓倒壞。其中飯田丸五階櫓僅靠一隅石垣撐住而未塌，這幕「<strong>奇跡の一本石垣</strong>」傳遍日本，成為不屈的象徵。</p>
-    <p>面對需時數十年（全體預計 <strong>2052 年</strong>完成）的修復，熊本城選擇了一條罕見的路——「<strong>見せる復興（讓人看見的復興）</strong>」：不遮掩傷痕，反而架起特別見学通路，邀請世人在重建的過程中一同見證。你此刻看到的，是一座<strong>正在重生的城</strong>，這份「進行式」的感動，是任何完工後的城都給不了的。</p>
-    <div class="lore">
-      <span class="lore-t">帶著故事去看城</span>
-      讀完這些，下次站在二様の石垣前，你看見的就不只是石頭，而是加藤與細川兩個時代；走過闇り通路，你會想起昭君之間的秘密；仰望宇土櫓，你會記得它撐過了戰火與地震。──這就是深度旅行的樂趣。
+    <div class="figrow-text">
+      <p>明治 10 年（1877），西郷隆盛率薩摩軍掀起<strong>西南戰爭</strong>，猛攻熊本城。鎮台司令<strong>谷干城</strong>率軍據城死守，籠城約 <strong>52 日</strong>，薩摩軍始終未能攻破清正所築的堅城。</p>
+      <p>諷刺的是，就在總攻前數日，天守與本丸御殿竟突然<strong>失火燒毀</strong>，是失火還是自燒，至今成謎。</p>
     </div>
-    <a class="back-link" href="index.html#routes">← 回首頁看參觀路線，開始規劃行程</a>
-  </section>
+  </div>
+  <blockquote class="famous reveal">
+    「我並非敗給政府軍，而是敗給了築起這座城的——加藤清正公。」
+    <cite>—— 傳為西郷隆盛兵敗後之語</cite>
+  </blockquote>
+  <p class="reveal">跨越三百年，清正的籠城智慧仍替後人擋下了千軍萬馬。這句話，正是熊本城「不落之城」威名最好的註腳。</p>
+  <a class="spot-link reveal" href="guide.html#spot-iidamaru">
+    <span class="sl-ico">🪨</span>
+    <span class="sl-txt"><b>飯田丸五階櫓</b>2016 震災中僅靠一柱石垣撐住的「奇跡の一本石垣」——不屈精神跨越了兩場災難。</span>
+    <span class="sl-go">→</span>
+  </a>
+  <a class="spot-link reveal" href="guide.html#spot-tabaruzaka">
+    <span class="sl-ico">⚔️</span>
+    <span class="sl-txt"><b>田原坂（古戰場）</b>想把這場烽火走到現場？西南戰爭最慘烈的決戰地，就在熊本城外——見「周邊延伸」。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
 
-</article>
+<!-- 8 信仰 -->
+<section class="story-chapter hist-block" id="shinko" data-label="清正公さん">
+  <h2 class="reveal"><span class="num">捌</span>清正公さん・庶民的信仰</h2>
+  <p class="reveal">清正不僅築城、治水，更致力於民生，深受肥後百姓愛戴，被親暱地稱為「<strong>清正公さん（せいしょこさん）</strong>」。城內的<strong>加藤神社</strong>即祭祀清正，至今香火鼎盛，是市民祈求勝運與平安之地——四百年來，他從未真正離開這座城與這片土地。</p>
+  <a class="spot-link reveal" href="guide.html#spot-suizenji">
+    <span class="sl-ico">💧</span>
+    <span class="sl-txt"><b>治水之神的延伸</b>清正的治水血脈也流向城外——通潤橋、水前寺湧泉，都在「周邊延伸」等你。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
+
+<!-- 9 復興 -->
+<section class="story-chapter hist-block" id="fukko" data-label="見せる復興">
+  <h2 class="reveal"><span class="num">玖</span>地震與「見せる復興」</h2>
+  <figure class="hist-fig reveal">
+    <img loading="lazy" src="images/iidamaru.png" alt="奇跡の一本石垣">
+    <figcaption><b>飯田丸五階櫓・奇跡の一本石垣</b>／ムカイ・Public Domain</figcaption>
+  </figure>
+  <p class="reveal">2016 年熊本地震重創全城：天守落瓦、石垣崩落約 3 萬㎡、多座櫓倒壞。其中飯田丸五階櫓僅靠一隅石垣撐住而未塌，這幕「<strong>奇跡の一本石垣</strong>」傳遍日本，成為不屈的象徵。</p>
+  <p class="reveal">面對需時數十年（全體預計 <strong>2052 年</strong>完成）的修復，熊本城選擇了一條罕見的路——「<strong>見せる復興（讓人看見的復興）</strong>」：不遮掩傷痕，反而架起特別見学通路，邀請世人在重建的過程中一同見證。你此刻看到的，是一座<strong>正在重生的城</strong>，這份「進行式」的感動，是任何完工後的城都給不了的。</p>
+  <a class="spot-link reveal" href="guide.html#spot-tokubetsu">
+    <span class="sl-ico">🌉</span>
+    <span class="sl-txt"><b>特別見学通路</b>「見せる復興」的核心——與崩落石垣同高的高架步道，現在來才看得到。</span>
+    <span class="sl-go">→</span>
+  </a>
+</section>
+
+<!-- 故事結尾 CTA -->
+<section class="story-end" id="end">
+  <div class="reveal">
+    <h2>故事讀完了，現在去走一遍</h2>
+    <p>帶著這些故事登城，你看見的就不只是石頭與木頭，而是四百年的人與時代。</p>
+    <a class="big-cta" href="guide.html">🏯 開始規劃行程 →</a>
+    <div class="sub-links">
+      <a href="guide.html#routes">推薦路線</a>・
+      <a href="guide.html#spots">景點打卡</a>・
+      <a href="guide.html#around">熊本周邊延伸</a>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <p>本頁內容整理自
@@ -178,5 +248,6 @@
   <p class="credit-note">人物肖像（加藤清正・宮本武蔵・西郷隆盛）為公眾領域古畫；現場照片來自 Wikimedia Commons，已於圖說標示作者與授權。</p>
 </footer>
 
+<script src="js/story.js"></script>
 </body>
 </html>
