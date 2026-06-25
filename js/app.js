@@ -101,8 +101,7 @@
   function aroundCard(s) {
     var desc = s.desc.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
     var tip = s.tip ? '<div class="spot-tip">💡 ' + esc(s.tip) + "</div>" : "";
-    var mapUrl = "https://www.google.com/maps/search/?api=1&query=" +
-      encodeURIComponent(s.map || s.name);
+    var mapUrl = mapUrlFor(s);
     return '' +
       '<article class="spot" id="spot-' + s.id + '">' +
         '<div class="spot-photo">' + photoHTML(s) + "</div>" +
@@ -122,6 +121,81 @@
     var el = document.getElementById("around-list");
     if (!el || !window.AROUND) return;
     el.innerHTML = window.AROUND.map(aroundCard).join("");
+  }
+
+  /* ---- 熊本城平面導覽：SVG 俯瞰示意圖 ＋ 曲輪別導覽 ---- */
+  function mapUrlFor(s) {
+    return "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent(s.map || s.name);
+  }
+  function renderLayout() {
+    var L = window.LAYOUT;
+    var planEl = document.getElementById("castle-plan");
+    var areaEl = document.getElementById("layout-areas");
+    if (!L || !planEl || !areaEl) return;
+
+    // 依曲輪順序給景點編號（SVG 標記與下方清單共用同一組號碼）
+    var num = {}, n = 0;
+    L.kuruwa.forEach(function (k) {
+      k.spots.forEach(function (id) { if (spotById[id]) num[id] = ++n; });
+    });
+
+    // --- SVG ---
+    var svg = '<svg class="plan-svg" viewBox="' + L.viewBox +
+      '" role="img" aria-label="熊本城曲輪配置示意圖" xmlns="http://www.w3.org/2000/svg">';
+    // 北方指示
+    svg += '<text class="plan-compass" x="378" y="22" text-anchor="end">北 ↑</text>';
+    // 曲輪線框與區名
+    L.kuruwa.forEach(function (k) {
+      if (k.rect) {
+        svg += '<rect class="kuruwa-zone" x="' + k.rect.x + '" y="' + k.rect.y +
+          '" width="' + k.rect.w + '" height="' + k.rect.h + '" rx="7"/>';
+      }
+      if (k.label) {
+        svg += '<text class="zone-label" x="' + k.label.x + '" y="' + k.label.y +
+          '" text-anchor="middle">' + esc(k.name) + "</text>";
+      }
+    });
+    // 景點標記
+    L.pins.forEach(function (p) {
+      var s = spotById[p.id];
+      if (!s) return;
+      var m = META[s.status];
+      var lx = (p.lx != null ? p.lx : p.x + 12);
+      var ly = (p.ly != null ? p.ly : p.y + 4);
+      svg += '<a href="#spot-' + p.id + '" class="plan-pin-link">' +
+        '<circle class="plan-pin ' + m.cls + '" cx="' + p.x + '" cy="' + p.y + '" r="10">' +
+          "<title>" + esc(s.name) + "（" + esc(m.label) + "）</title></circle>" +
+        '<text class="pin-num" x="' + p.x + '" y="' + (p.y + 3.2) +
+          '" text-anchor="middle">' + (num[p.id] || "") + "</text>" +
+        '<text class="pin-label" x="' + lx + '" y="' + ly +
+          '" text-anchor="' + (p.anchor || "start") + '">' + esc(p.short || s.name) + "</text>" +
+        "</a>";
+    });
+    svg += "</svg>";
+    planEl.innerHTML = svg;
+
+    // --- 曲輪別導覽 ---
+    areaEl.innerHTML = L.kuruwa.map(function (k) {
+      var rows = k.spots.map(function (id) {
+        var s = spotById[id];
+        if (!s) return "";
+        var m = META[s.status];
+        return "<li>" +
+          '<span class="ka-num">' + (num[id] || "") + "</span>" +
+          '<span class="badge-inline ' + m.cls + '">' + m.icon + "</span>" +
+          '<a class="ka-name" href="#spot-' + id + '">' + esc(s.name) + "</a>" +
+          '<span class="ka-jp">' + esc(s.jp) + "</span>" +
+          '<a class="spot-link-out ka-map" href="' + mapUrlFor(s) +
+            '" target="_blank" rel="noopener">🗺 在地圖開啟</a>' +
+          "</li>";
+      }).join("");
+      return '<div class="kuruwa-card">' +
+        "<h3>" + esc(k.name) + ' <span class="kuruwa-jp">' + esc(k.jp) + "</span></h3>" +
+        (k.desc ? '<p class="kuruwa-desc">' + esc(k.desc) + "</p>" : "") +
+        '<ul class="kuruwa-spots">' + rows + "</ul>" +
+        "</div>";
+    }).join("");
   }
 
   /* ---- 冷知識 Q&A ---- */
@@ -240,6 +314,7 @@
   renderRouteTabs();
   renderRoute(ROUTES[0] && ROUTES[0].id);
   renderSpots();
+  renderLayout();
   renderTimeline();
   renderTrivia();
   renderAround();

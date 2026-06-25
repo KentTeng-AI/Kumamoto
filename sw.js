@@ -1,5 +1,5 @@
 /* 熊本城 深度導覽 — Service Worker（離線快取）*/
-var CACHE = "kumamoto-guide-v6";
+var CACHE = "kumamoto-guide-v7";
 var ASSETS = [
   "./",
   "./index.html",
@@ -11,6 +11,7 @@ var ASSETS = [
   "./data/timeline.js",
   "./data/around.js",
   "./data/trivia.js",
+  "./data/layout.js",
   "./manifest.webmanifest",
   "./icons/icon.svg",
   "./images/hero_tenshu.jpg",

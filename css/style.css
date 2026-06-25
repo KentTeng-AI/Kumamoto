@@ -381,6 +381,47 @@ body.js-ready .reveal.in-view{opacity:1;transform:none}
 .tv-a{padding:.75rem .9rem;font-size:.9rem;color:var(--ink-soft);line-height:1.7}
 .tv-a p{margin:0}
 
+/* 熊本城平面導覽（SVG 俯瞰示意圖 ＋ 曲輪別導覽） */
+.castle-plan{margin:.2rem 0 1.6rem;background:var(--paper);
+  border:1px solid var(--line);border-radius:12px;padding:.6rem;
+  box-shadow:0 6px 16px rgba(26,26,26,.06)}
+.plan-svg{display:block;width:100%;height:auto;
+  font-family:var(--sans);touch-action:manipulation}
+.plan-compass{fill:var(--muted);font-size:11px;letter-spacing:.1em}
+.kuruwa-zone{fill:rgba(200,168,90,.07);stroke:var(--gold-deep);
+  stroke-width:1.2;stroke-dasharray:4 3}
+.zone-label{fill:var(--ink);font-family:var(--serif);font-size:11px;
+  font-weight:700;letter-spacing:.05em}
+.plan-pin-link{cursor:pointer}
+.plan-pin{stroke:#fff;stroke-width:1.6;transition:.15s}
+.plan-pin.st-open{fill:var(--open)}
+.plan-pin.st-view{fill:var(--view)}
+.plan-pin.st-closed{fill:var(--closed)}
+.plan-pin-link:hover .plan-pin{stroke:var(--gold);r:12}
+.pin-num{fill:#fff;font-size:11px;font-weight:700;pointer-events:none}
+.pin-label{fill:var(--ink-soft);font-size:9.5px;font-weight:600;pointer-events:none;
+  paint-order:stroke;stroke:var(--paper);stroke-width:2.4px;stroke-linejoin:round}
+
+.kuruwa-guide{display:grid;gap:.9rem}
+@media(min-width:640px){.kuruwa-guide{grid-template-columns:1fr 1fr;align-items:start}}
+.kuruwa-card{background:var(--paper);border:1px solid var(--line);
+  border-radius:10px;padding:.9rem 1rem}
+.kuruwa-card h3{font-family:var(--serif);font-size:1.05rem;color:var(--ink);
+  display:flex;align-items:baseline;gap:.45rem;flex-wrap:wrap}
+.kuruwa-jp{font-size:.72rem;color:var(--muted);font-weight:400;letter-spacing:.04em}
+.kuruwa-desc{font-size:.82rem;color:var(--muted);line-height:1.65;margin:.4rem 0 .7rem}
+.kuruwa-spots{list-style:none;display:grid;gap:.45rem}
+.kuruwa-spots li{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;
+  padding-bottom:.45rem;border-bottom:1px dashed var(--line)}
+.kuruwa-spots li:last-child{border-bottom:none;padding-bottom:0}
+.ka-num{flex:0 0 auto;width:1.45rem;height:1.45rem;border-radius:50%;
+  background:var(--ink);color:var(--washi);font-size:.72rem;font-weight:700;
+  display:inline-flex;align-items:center;justify-content:center}
+.badge-inline{flex:0 0 auto;font-size:.8rem}
+.ka-name{font-size:.9rem;font-weight:600;color:var(--ink)}
+.ka-jp{font-size:.72rem;color:var(--muted)}
+.ka-map{margin-left:auto;font-size:.78rem;padding:.25rem .7rem}
+
 /* ============================================================
    手機 RWD（響應式）
    ============================================================ */

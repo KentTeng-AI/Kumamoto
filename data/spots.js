@@ -14,6 +14,7 @@ window.SPOTS = [
     jp: "桜の馬場 城彩苑",
     status: "open",
     area: "城外・起點",
+    map: "桜の馬場 城彩苑",
     image: "johsaien.jpg",
     credit: "Jdjuice / CC BY-SA 4.0（Wikimedia Commons）",
     desc: [
@@ -29,6 +30,7 @@ window.SPOTS = [
     jp: "熊本城ミュージアム わくわく座",
     status: "open",
     area: "城彩苑內",
+    map: "熊本城ミュージアム わくわく座",
     image: "wakuwakuza.jpg",
     credit: "z tanuki / CC BY 3.0（Wikimedia Commons・城彩苑街景）",
     desc: [
@@ -46,6 +48,7 @@ window.SPOTS = [
     jp: "特別見学通路",
     status: "open",
     area: "本丸",
+    map: "熊本城 特別見学通路",
     image: "tokubetsu.jpg",
     credit: "先従隗始 / CC0（Wikimedia Commons・特別公開區南口）",
     desc: [
@@ -63,6 +66,7 @@ window.SPOTS = [
     jp: "二様の石垣",
     status: "view",
     area: "本丸（見学通路眺望）",
+    map: "二様の石垣",
     image: "niyou.jpg",
     credit: "Mukai / CC BY-SA 3.0（Wikimedia Commons・圖含數寄屋丸與二様の石垣）",
     desc: [
@@ -79,6 +83,7 @@ window.SPOTS = [
     jp: "数寄屋丸二階御広間",
     status: "view",
     area: "天守西南（見学通路眺望）",
+    map: "数寄屋丸 熊本城",
     image: "niyou.jpg",
     credit: "Mukai / CC BY-SA 3.0（Wikimedia Commons・遠處即數寄屋丸）",
     desc: [
@@ -94,6 +99,7 @@ window.SPOTS = [
     jp: "飯田丸五階櫓",
     status: "view",
     area: "本丸南（見学通路眺望）",
+    map: "飯田丸五階櫓",
     image: "iidamaru.png",
     credit: "ムカイ / Public Domain（Wikimedia Commons）",
     desc: [
@@ -111,6 +117,7 @@ window.SPOTS = [
     jp: "闇り通路",
     status: "open",
     area: "本丸御殿地下",
+    map: "熊本城 闇り通路",
     image: "kuragari.jpg",
     credit: "そらみみ / CC BY-SA 3.0（Wikimedia Commons）",
     desc: [
@@ -127,6 +134,7 @@ window.SPOTS = [
     jp: "天守閣",
     status: "open",
     area: "本丸",
+    map: "熊本城天守閣",
     image: "tenshu.jpg",
     credit: "そらみみ / CC BY-SA 3.0（Wikimedia Commons）",
     desc: [
@@ -152,6 +160,7 @@ window.SPOTS = [
     jp: "宇土櫓",
     status: "closed",
     area: "平左衛門丸",
+    map: "宇土櫓",
     image: "uto_tenshu.jpg",
     credit: "そらみみ / CC BY-SA 4.0（Wikimedia Commons・宇土櫓與天守）",
     desc: [
@@ -169,6 +178,7 @@ window.SPOTS = [
     jp: "加藤神社",
     status: "open",
     area: "本丸北側",
+    map: "加藤神社 熊本",
     image: "three_towers.jpg",
     credit: "Nagoya Taro / CC BY-SA 3.0（Wikimedia Commons・小天守・宇土櫓・大天守）",
     desc: [
@@ -184,6 +194,7 @@ window.SPOTS = [
     jp: "二の丸広場",
     status: "open",
     area: "二の丸",
+    map: "熊本城 二の丸広場",
     image: "hero_tenshu.jpg",
     credit: "663highland / CC BY-SA 3.0（Wikimedia Commons）",
     desc: [
@@ -199,6 +210,7 @@ window.SPOTS = [
     jp: "長塀",
     status: "open",
     area: "城外・坪井川沿",
+    map: "熊本城 長塀",
     image: "nagabei.jpg",
     credit: "そらみみ / CC BY-SA 4.0（Wikimedia Commons）",
     desc: [
