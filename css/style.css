@@ -1,0 +1,182 @@
+/* ===== 熊本城 深度導覽 — 和風典雅主題 ===== */
+:root{
+  --ink:#1a1a1a;          /* 黑城 */
+  --ink-soft:#2c2825;
+  --gold:#c8a85a;         /* 金箔 */
+  --gold-deep:#a8863f;
+  --crimson:#8b1a1a;      /* 深紅 */
+  --washi:#f4efe4;        /* 和紙底 */
+  --washi-2:#ece3d2;
+  --paper:#fbf8f1;
+  --text:#2a2520;
+  --muted:#6b6155;
+  --line:#d8ccb4;
+  --open:#3c7a4a; --view:#b5852a; --closed:#a33;
+  --serif:"Noto Serif TC","Yu Mincho",YuMincho,"Hiragino Mincho ProN","MS Mincho",serif;
+  --sans:"Noto Sans TC","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  font-family:var(--sans);color:var(--text);line-height:1.75;
+  background:var(--washi);
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(200,168,90,.05), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(139,26,26,.04), transparent 45%);
+}
+a{color:var(--crimson);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* 頂部導覽 */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(26,26,26,.96);color:var(--washi);
+  padding:.55rem 1rem;border-bottom:2px solid var(--gold);
+  backdrop-filter:blur(6px);
+}
+.brand{font-family:var(--serif);font-size:1.15rem;letter-spacing:.12em;font-weight:700}
+.brand-sub{font-size:.7rem;color:var(--gold);margin-left:.4rem;letter-spacing:.2em}
+.topnav a{color:var(--washi);margin-left:.9rem;font-size:.9rem}
+.topnav a:hover{color:var(--gold);text-decoration:none}
+
+/* Hero */
+.hero{position:relative;height:62vh;min-height:340px;overflow:hidden;background:var(--ink)}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;
+  filter:brightness(.62) saturate(1.05);transform:scale(1.02)}
+.hero-overlay{position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;color:#fff;
+  background:linear-gradient(transparent 35%, rgba(0,0,0,.55))}
+.kana{font-family:var(--serif);letter-spacing:.5em;color:var(--gold);font-size:.9rem;margin-bottom:.3rem}
+.hero h1{font-family:var(--serif);font-size:clamp(3rem,14vw,6rem);letter-spacing:.18em;
+  text-shadow:0 4px 20px rgba(0,0,0,.6);font-weight:700}
+.hero-tag{margin-top:.6rem;font-size:.95rem;letter-spacing:.18em;color:#f0e6cf}
+.hero-credit{position:absolute;bottom:8px;right:10px;font-size:.62rem;color:rgba(255,255,255,.6)}
+
+/* 現況提醒 */
+.notice{
+  background:#fff7e8;border-left:5px solid var(--crimson);
+  margin:1rem;padding:.85rem 1rem;border-radius:6px;font-size:.9rem;
+  box-shadow:0 1px 4px rgba(0,0,0,.06)
+}
+.notice strong{display:block;color:var(--crimson);margin-bottom:.2rem}
+
+/* 狀態色字 */
+.st-open{color:var(--open);font-weight:600}
+.st-view{color:var(--view);font-weight:600}
+.st-closed{color:var(--closed);font-weight:600}
+
+/* 進度 */
+.progress-wrap{margin:1rem;padding:1rem;background:var(--paper);
+  border:1px solid var(--line);border-radius:10px}
+.progress-head{display:flex;justify-content:space-between;font-weight:600;
+  font-family:var(--serif);letter-spacing:.05em;margin-bottom:.5rem}
+.progress-bar{height:12px;background:var(--washi-2);border-radius:99px;overflow:hidden}
+#progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));
+  border-radius:99px;transition:width .4s ease}
+.reset-btn{margin-top:.7rem;background:none;border:1px solid var(--line);
+  color:var(--muted);padding:.3rem .8rem;border-radius:99px;font-size:.78rem;cursor:pointer}
+.reset-btn:hover{border-color:var(--crimson);color:var(--crimson)}
+
+/* 區塊 */
+.block{max-width:880px;margin:0 auto;padding:2.4rem 1rem}
+.block h2{font-family:var(--serif);font-size:1.6rem;letter-spacing:.08em;
+  color:var(--ink);position:relative;padding-bottom:.5rem;margin-bottom:.3rem}
+.block h2::after{content:"";position:absolute;left:0;bottom:0;width:54px;height:3px;
+  background:linear-gradient(90deg,var(--gold),transparent)}
+.block-lead{color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
+
+/* 路線 */
+.route-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.2rem}
+.route-tabs button{font-family:var(--sans);font-size:.82rem;padding:.45rem .8rem;
+  border:1px solid var(--line);background:var(--paper);border-radius:99px;cursor:pointer;
+  color:var(--text);transition:.2s}
+.route-tabs button.on{background:var(--ink);color:var(--washi);border-color:var(--ink)}
+.route-meta{font-size:.85rem;color:var(--muted);margin-bottom:1rem}
+.route-meta b{color:var(--crimson)}
+.route-steps{list-style:none;position:relative;padding-left:.4rem}
+.route-steps li{position:relative;padding:.55rem 0 .55rem 2.6rem;border-left:2px dashed var(--line);
+  margin-left:1rem}
+.route-steps li:last-child{border-left:2px solid transparent}
+.step-num{position:absolute;left:-1rem;top:.5rem;width:2rem;height:2rem;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;
+  color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.step-num.st-open{background:var(--open)}
+.step-num.st-view{background:var(--view)}
+.step-num.st-closed{background:var(--closed)}
+.step-name{font-family:var(--serif);font-weight:600}
+.step-jp{font-size:.75rem;color:var(--muted)}
+.route-steps a.step-name:hover{color:var(--crimson)}
+
+/* 篩選 */
+.filter-bar{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
+.filter{font-size:.8rem;padding:.35rem .75rem;border:1px solid var(--line);
+  background:var(--paper);border-radius:99px;cursor:pointer;color:var(--text)}
+.filter.on{background:var(--crimson);color:#fff;border-color:var(--crimson)}
+
+/* 景點卡 */
+.spot-list{display:grid;gap:1.2rem}
+.spot{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  box-shadow:0 2px 8px rgba(60,40,10,.05);transition:.25s}
+.spot.done{outline:2px solid var(--gold)}
+.spot-photo{aspect-ratio:16/9;background:var(--washi-2);position:relative;overflow:hidden}
+.spot-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.spot-photo .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  flex-direction:column;color:#b3a587;font-family:var(--serif);letter-spacing:.2em;
+  background:repeating-linear-gradient(45deg,#efe7d6,#efe7d6 12px,#eae0cb 12px,#eae0cb 24px)}
+.spot-photo .credit{position:absolute;bottom:0;right:0;background:rgba(0,0,0,.55);color:#fff;
+  font-size:.6rem;padding:1px 6px;border-top-left-radius:6px}
+.badge{position:absolute;top:.6rem;left:.6rem;font-size:.72rem;font-weight:700;
+  padding:.2rem .55rem;border-radius:99px;color:#fff;backdrop-filter:blur(2px)}
+.badge.st-open{background:var(--open)}
+.badge.st-view{background:var(--view)}
+.badge.st-closed{background:var(--closed)}
+.spot-body{padding:1rem 1.1rem 1.2rem}
+.spot-title{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.spot-title h3{font-family:var(--serif);font-size:1.18rem;letter-spacing:.04em}
+.spot-jp{font-size:.78rem;color:var(--muted);letter-spacing:.08em}
+.spot-area{font-size:.7rem;color:var(--gold-deep);border:1px solid var(--line);
+  padding:1px 7px;border-radius:99px;white-space:nowrap;margin-top:.2rem}
+.spot p{font-size:.92rem;margin-top:.55rem}
+.floors{list-style:none;margin:.6rem 0 0;border-top:1px dashed var(--line);padding-top:.6rem}
+.floors li{font-size:.85rem;padding:.2rem 0 .2rem .2rem;color:var(--ink-soft)}
+.spot-tip{margin-top:.7rem;font-size:.85rem;background:#fbf3df;border-left:3px solid var(--gold);
+  padding:.4rem .7rem;border-radius:0 6px 6px 0;color:#6a5526}
+.check{display:flex;align-items:center;gap:.5rem;margin-top:.9rem;cursor:pointer;
+  font-size:.9rem;user-select:none;font-weight:600;color:var(--ink)}
+.check input{width:1.15rem;height:1.15rem;accent-color:var(--gold-deep)}
+
+/* 時間軸 */
+.timeline{position:relative;padding-left:1.2rem;border-left:3px solid var(--gold)}
+.timeline details{margin-bottom:1rem;position:relative}
+.timeline details::before{content:"";position:absolute;left:-1.7rem;top:.55rem;width:13px;height:13px;
+  background:var(--paper);border:3px solid var(--gold-deep);border-radius:50%}
+.timeline summary{list-style:none;cursor:pointer;background:var(--paper);border:1px solid var(--line);
+  border-radius:10px;padding:.7rem .9rem;transition:.2s}
+.timeline summary::-webkit-details-marker{display:none}
+.timeline summary:hover{border-color:var(--gold)}
+.tl-year{font-family:var(--serif);color:var(--crimson);font-weight:700;font-size:.9rem;letter-spacing:.05em}
+.tl-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin:.1rem 0}
+.tl-summary{font-size:.82rem;color:var(--muted)}
+.tl-detail{padding:.8rem .9rem 0;font-size:.9rem}
+.tl-detail p{margin-bottom:.55rem}
+.tl-detail .src{font-size:.78rem}
+details[open] summary{border-color:var(--gold);background:#fff}
+
+/* 資訊 */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.info-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:1rem}
+.info-card h3{font-family:var(--serif);font-size:1.05rem;margin-bottom:.4rem;color:var(--ink)}
+.info-card p{font-size:.9rem;color:var(--text)}
+
+/* Footer */
+.footer{background:var(--ink);color:#cbbfa8;padding:2rem 1rem;text-align:center;
+  font-size:.82rem;border-top:3px solid var(--gold)}
+.footer a{color:var(--gold)}
+.credit-note,.offline-note{font-size:.74rem;margin-top:.6rem;color:#9c9079}
+.offline-note{color:var(--gold)}
+
+@media(max-width:520px){
+  .topnav a{margin-left:.6rem;font-size:.82rem}
+  .hero{height:54vh}
+}

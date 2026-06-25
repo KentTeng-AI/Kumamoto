@@ -1,0 +1,15 @@
+{
+  "name": "熊本城 深度導覽",
+  "short_name": "熊本城導覽",
+  "description": "熊本城深度導覽：歷史時間軸、2026 開放／維修狀態、參觀路線與景點打卡。可離線使用。",
+  "lang": "zh-Hant",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

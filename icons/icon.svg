@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#1a1a1a"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#c8a85a" stroke-width="6" opacity="0.5"/>
+  <g fill="#c8a85a">
+    <!-- 天守台石垣 -->
+    <path d="M150 400 L150 360 Q256 330 362 360 L362 400 Z" opacity="0.85"/>
+    <!-- 大天守 三重 -->
+    <path d="M196 360 h120 v-26 h-120 z"/>
+    <path d="M186 334 q70 -16 140 0 v-4 q-70 -16 -140 0 z" fill="#8b1a1a"/>
+    <path d="M206 330 h100 v-30 h-100 z"/>
+    <path d="M198 300 q58 -14 116 0 v-4 q-58 -14 -116 0 z" fill="#8b1a1a"/>
+    <path d="M220 296 h72 v-30 h-72 z"/>
+    <path d="M214 266 q42 -12 84 0 v-4 q-42 -12 -84 0 z" fill="#8b1a1a"/>
+    <path d="M236 262 h40 v-26 h-40 z"/>
+    <path d="M232 236 q24 -10 48 0 v-4 q-24 -10 -48 0 z" fill="#8b1a1a"/>
+    <!-- 鯱 -->
+    <path d="M236 236 q-4 -10 4 -14 q-2 8 6 10 z"/>
+    <path d="M276 236 q4 -10 -4 -14 q2 8 -6 10 z"/>
+  </g>
+</svg>
