@@ -32,6 +32,29 @@
     document.getElementById("progress-text").textContent = done + " / " + total;
     document.getElementById("progress-fill").style.width =
       (total ? (done / total * 100) : 0) + "%";
+    renderDoneList();
+  }
+
+  // 已打卡清單：清楚列出哪些景點已打過卡，可點擊跳到該景點
+  function renderDoneList() {
+    var el = document.getElementById("done-list");
+    if (!el) return;
+    var done = SPOTS.filter(function (s) { return checked[s.id]; });
+    if (!done.length) {
+      el.innerHTML = '<p class="done-empty">尚未打卡任何景點 — 在下方「景點導覽」勾選即可記錄。</p>';
+      return;
+    }
+    var items = done.map(function (s) {
+      var m = META[s.status];
+      return '<li><a href="#spot-' + s.id + '">' +
+        '<span class="done-icon ' + m.cls + '">' + m.icon + "</span>" +
+        '<span class="done-name">' + esc(s.name) + "</span>" +
+        '<span class="done-jp">' + esc(s.jp) + "</span>" +
+        '<button class="done-undo" data-undo="' + s.id + '" title="取消打卡">✕</button>' +
+        "</a></li>";
+    }).join("");
+    el.innerHTML = '<p class="done-head">✅ 已打卡（' + done.length + " / " + SPOTS.length + "）</p>" +
+      '<ul class="done-ul">' + items + "</ul>";
   }
 
   /* ---- 景點卡 ---- */
@@ -122,6 +145,22 @@
         if (card) card.classList.toggle("done", cb.checked);
         updateProgress();
       }
+    });
+    // 從「已打卡清單」直接取消打卡
+    document.getElementById("done-list").addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-undo]");
+      if (!btn) return;
+      e.preventDefault();
+      var id = btn.getAttribute("data-undo");
+      delete checked[id];
+      saveChecked(checked);
+      var card = document.getElementById("spot-" + id);
+      if (card) {
+        card.classList.remove("done");
+        var box = card.querySelector("input[type=checkbox]");
+        if (box) box.checked = false;
+      }
+      updateProgress();
     });
     // 清除
     document.getElementById("reset-btn").addEventListener("click", function () {

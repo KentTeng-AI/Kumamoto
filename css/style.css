@@ -74,9 +74,27 @@ a:hover{text-decoration:underline}
 .progress-bar{height:12px;background:var(--washi-2);border-radius:99px;overflow:hidden}
 #progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-deep));
   border-radius:99px;transition:width .4s ease}
-.reset-btn{margin-top:.7rem;background:none;border:1px solid var(--line);
+.reset-btn{margin-top:.4rem;background:none;border:1px solid var(--line);
   color:var(--muted);padding:.3rem .8rem;border-radius:99px;font-size:.78rem;cursor:pointer}
 .reset-btn:hover{border-color:var(--crimson);color:var(--crimson)}
+
+/* 已打卡清單 */
+.done-list{margin-top:.9rem}
+.done-head{font-family:var(--serif);font-weight:600;color:var(--open);font-size:.92rem;margin-bottom:.4rem}
+.done-empty{font-size:.82rem;color:var(--muted);margin-top:.9rem}
+.done-ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.done-ul a{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;background:#fff;
+  border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:7px;
+  color:var(--text);text-decoration:none;transition:.15s}
+.done-ul a:hover{border-left-color:var(--crimson);background:#fffdf7}
+.done-icon{font-size:.7rem}
+.done-name{font-family:var(--serif);font-weight:600;font-size:.9rem}
+.done-jp{font-size:.72rem;color:var(--muted);flex:1}
+.done-undo{margin-left:auto;background:none;border:none;color:var(--muted);cursor:pointer;
+  font-size:.85rem;padding:.1rem .35rem;border-radius:5px;line-height:1}
+.done-undo:hover{background:#f3e3e3;color:var(--crimson)}
+.save-note{font-size:.74rem;color:var(--gold-deep);margin-top:.7rem;
+  background:#fbf3df;border-radius:6px;padding:.4rem .6rem}
 
 /* 區塊 */
 .block{max-width:880px;margin:0 auto;padding:2.4rem 1rem}
