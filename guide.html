@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>熊本城 深度導覽 ｜ 現場對照指南</title>
+<meta name="description" content="熊本城深度導覽：歷史時間軸、2026 最新開放／維修狀態、推薦參觀路線、景點打卡清單。可離線使用，現場邊走邊對照。">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 頂部導覽 -->
+<header class="topbar">
+  <span class="brand">熊本城<span class="brand-sub">深度導覽</span></span>
+  <nav class="topnav">
+    <a href="#routes">路線</a>
+    <a href="#spots">景點</a>
+    <a href="history.html">典故</a>
+    <a href="#info">資訊</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-img" style="background-image:url('images/hero_tenshu.jpg')"></div>
+  <div class="hero-overlay">
+    <p class="kana">くまもとじょう</p>
+    <h1>熊本城</h1>
+    <p class="hero-tag">黑色名城 ・ 日本三名城 ・ 見せる復興</p>
+    <p class="hero-credit">攝影 663highland / CC BY-SA 3.0</p>
+  </div>
+</section>
+
+<!-- 現況提醒橫幅 -->
+<aside class="notice">
+  <strong>⚠️ 2026 參觀提醒</strong>
+  熊本城全體復原預計 2052 年完成，部分區域仍在施工。各景點已標示
+  <span class="st-open">🟢可參觀</span>／<span class="st-view">🟡僅能遠觀</span>／<span class="st-closed">🔴維修中</span>，
+  實際以官方
+  <a href="https://castle.kumamoto-guide.jp/map/" target="_blank" rel="noopener">復旧状況公告</a> 為準。
+</aside>
+
+<!-- 打卡進度 -->
+<section class="progress-wrap">
+  <div class="progress-head">
+    <span>🏯 我的參觀進度</span>
+    <span id="progress-text">0 / 0</span>
+  </div>
+  <div class="progress-bar"><div id="progress-fill"></div></div>
+  <div id="done-list" class="done-list"></div>
+  <p class="save-note">📌 打卡紀錄會自動儲存在這支裝置的瀏覽器，關閉網頁後下次再打開仍會保留。</p>
+  <button id="reset-btn" class="reset-btn">清除打卡紀錄</button>
+</section>
+
+<!-- 路線 -->
+<section id="routes" class="block">
+  <h2>參觀路線</h2>
+  <p class="block-lead">選一條路線，跟著編號走。節點顏色代表現場可參觀程度。</p>
+  <div id="route-tabs" class="route-tabs"></div>
+  <div id="route-detail" class="route-detail"></div>
+</section>
+
+<!-- 景點 -->
+<section id="spots" class="block">
+  <h2>景點導覽 ＆ 打卡</h2>
+  <p class="block-lead">每個景點標註日文原名，方便對照現場看板；勾選即記錄你已參觀。</p>
+  <div class="filter-bar">
+    <button class="filter on" data-filter="all">全部</button>
+    <button class="filter" data-filter="open">🟢可參觀</button>
+    <button class="filter" data-filter="view">🟡僅能遠觀</button>
+    <button class="filter" data-filter="closed">🔴維修中</button>
+  </div>
+  <div id="spot-list" class="spot-list"></div>
+</section>
+
+<!-- 歷史時間軸 -->
+<section id="history" class="block">
+  <h2>歷史時間軸</h2>
+  <p class="block-lead">點開每個節點深入了解。從 1588 加藤清正入肥後，到 2052 全體復原。</p>
+  <a class="deep-cta" href="history.html">📖 想出發前先讀懂故事？<b>進入「歷史與典故」深度導讀 →</b></a>
+  <div id="timeline" class="timeline"></div>
+</section>
+
+<!-- 實用資訊 -->
+<section id="info" class="block">
+  <h2>實用資訊</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>🕘 開園時間</h3>
+      <p>9:00–17:00<br>最終入園 16:00<br>天守最終登閣 16:30</p>
+    </div>
+    <div class="info-card">
+      <h3>🎫 門票</h3>
+      <p>高中生以上 ¥800<br>中小學生 ¥300<br>天守＋湧々座共通券 ¥850<br>可線上事前購票</p>
+    </div>
+    <div class="info-card">
+      <h3>🚉 交通</h3>
+      <p>JR 熊本站 → 市電「熊本城・市役所前」下車步行約 10 分；<br>或搭周遊巴士「しろめぐりん」。</p>
+    </div>
+    <div class="info-card">
+      <h3>🌸 小提示</h3>
+      <p>城內逾 600 株櫻花，賞櫻名所；<br>下載官方 App 可用 AR 與多語音導覽（中／日／英／粵／韓）。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>本站為個人旅遊導覽用途，內容整理自
+    <a href="https://castle.kumamoto-guide.jp/" target="_blank" rel="noopener">官方熊本城網站</a>、
+    熊本市觀光指南等公開資料，開放／維修狀態請以官方即時公告為準。</p>
+  <p class="credit-note">照片來自 Wikimedia Commons（663highland、そらみみ、Nagoya Taro、ムカイ 等，CC BY-SA／Public Domain），各景點卡片內標示作者與授權。</p>
+  <p class="offline-note" id="offline-note">📶 可離線使用：在瀏覽器選單「加到主畫面」即可像 App 一樣開啟。</p>
+</footer>
+
+<script src="data/spots.js"></script>
+<script src="data/timeline.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
