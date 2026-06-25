@@ -16,7 +16,8 @@
   --sans:"Noto Sans TC","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:60px}
+/* 根字級 120% = 整體字體放大 20%（所有字級皆以 rem 計，故一併等比放大）*/
+html{font-size:120%;scroll-behavior:smooth;scroll-padding-top:60px}
 body{
   font-family:var(--sans);color:var(--text);line-height:1.75;
   background:var(--washi);
