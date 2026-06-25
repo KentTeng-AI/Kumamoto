@@ -1,5 +1,5 @@
 /* 熊本城 深度導覽 — Service Worker（離線快取）*/
-var CACHE = "kumamoto-guide-v7";
+var CACHE = "kumamoto-guide-v8";
 var ASSETS = [
   "./",
   "./index.html",
