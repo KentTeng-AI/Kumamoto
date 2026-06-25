@@ -65,8 +65,13 @@ git push -u origin main
 | tenshu.jpg | そらみみ | CC BY-SA 3.0 |
 | uto_tenshu.jpg | そらみみ | CC BY-SA 4.0 |
 | nagabei.jpg | そらみみ | CC BY-SA 4.0 |
+| kuragari.jpg | そらみみ | CC BY-SA 3.0 |
 | three_towers.jpg | Nagoya Taro | CC BY-SA 3.0 |
 | iidamaru.png | ムカイ | Public Domain |
+| niyou.jpg | Mukai | CC BY-SA 3.0 |
+| johsaien.jpg | Jdjuice | CC BY-SA 4.0 |
+| wakuwakuza.jpg | z tanuki | CC BY 3.0 |
+| tokubetsu.jpg | 先従隗始 | CC0（公眾領域） |
 
 你也可以把 `images/` 內的圖片換成自己現場拍的照片（沿用相同檔名即可）。
 
