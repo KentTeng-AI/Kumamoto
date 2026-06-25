@@ -1,0 +1,42 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  # 每次 push 到 main 就自動部署
+  push:
+    branches: [main]
+  # 也可在 Actions 頁面手動觸發
+  workflow_dispatch:
+
+# 部署到 GitHub Pages 所需的權限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時間只跑一個部署，新的會取代排隊中的舊的
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # 純靜態網站，無需 build，直接上傳整個專案根目錄
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
