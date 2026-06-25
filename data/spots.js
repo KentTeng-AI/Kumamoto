@@ -41,6 +41,7 @@ window.SPOTS = [
   },
   {
     id: "tokubetsu",
+    story: "fukko",
     name: "特別見学通路",
     jp: "特別見学通路",
     status: "open",
@@ -57,6 +58,7 @@ window.SPOTS = [
   },
   {
     id: "niyou",
+    story: "rojo",
     name: "二様の石垣",
     jp: "二様の石垣",
     status: "view",
@@ -72,6 +74,7 @@ window.SPOTS = [
   },
   {
     id: "sukiya",
+    story: "hosokawa",
     name: "數寄屋丸二階御広間",
     jp: "数寄屋丸二階御広間",
     status: "view",
@@ -86,6 +89,7 @@ window.SPOTS = [
   },
   {
     id: "iidamaru",
+    story: "seinan",
     name: "飯田丸五階櫓（奇跡の一本石垣）",
     jp: "飯田丸五階櫓",
     status: "view",
@@ -102,6 +106,7 @@ window.SPOTS = [
   },
   {
     id: "kuragari",
+    story: "shokun",
     name: "闇り通路",
     jp: "闇り通路",
     status: "open",
@@ -117,6 +122,7 @@ window.SPOTS = [
   },
   {
     id: "tenshu",
+    story: "tenshu",
     name: "天守閣（大・小天守）",
     jp: "天守閣",
     status: "open",
@@ -141,6 +147,7 @@ window.SPOTS = [
   },
   {
     id: "uto",
+    story: "uto",
     name: "宇土櫓",
     jp: "宇土櫓",
     status: "closed",
@@ -157,6 +164,7 @@ window.SPOTS = [
   },
   {
     id: "katojinja",
+    story: "kiyomasa",
     name: "加藤神社",
     jp: "加藤神社",
     status: "open",

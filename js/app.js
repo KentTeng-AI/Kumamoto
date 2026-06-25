@@ -72,6 +72,9 @@
       : "";
     var desc = s.desc.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
     var tip = s.tip ? '<div class="spot-tip">💡 ' + esc(s.tip) + "</div>" : "";
+    var story = s.story
+      ? '<a class="read-story" href="index.html#' + s.story + '">📖 讀這段故事 →</a>'
+      : "";
     var isDone = checked[s.id] ? " done" : "";
     return '' +
       '<article class="spot' + isDone + '" id="spot-' + s.id + '" data-status="' + s.status + '">' +
@@ -84,7 +87,7 @@
             "<div><h3>" + esc(s.name) + '</h3><div class="spot-jp">' + esc(s.jp) + "</div></div>" +
             '<span class="spot-area">' + esc(s.area) + "</span>" +
           "</div>" +
-          desc + floors + tip +
+          desc + floors + tip + story +
           '<label class="check"><input type="checkbox" data-id="' + s.id + '"' +
             (checked[s.id] ? " checked" : "") + "> 我已參觀這裡</label>" +
         "</div>" +
@@ -92,6 +95,48 @@
   }
   function renderSpots() {
     document.getElementById("spot-list").innerHTML = SPOTS.map(spotCard).join("");
+  }
+
+  /* ---- 周邊延伸景點（不列入打卡）---- */
+  function aroundCard(s) {
+    var desc = s.desc.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+    var tip = s.tip ? '<div class="spot-tip">💡 ' + esc(s.tip) + "</div>" : "";
+    var mapUrl = "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent(s.map || s.name);
+    return '' +
+      '<article class="spot" id="spot-' + s.id + '">' +
+        '<div class="spot-photo">' + photoHTML(s) + "</div>" +
+        '<div class="spot-body">' +
+          '<div class="spot-title">' +
+            "<div><h3>" + esc(s.name) + '</h3><div class="spot-jp">' + esc(s.jp) + "</div></div>" +
+            '<span class="spot-distance">' + esc(s.dist) + "</span>" +
+          "</div>" +
+          desc + tip +
+          '<div class="spot-links">' +
+            '<a class="spot-link-out" href="' + mapUrl + '" target="_blank" rel="noopener">🗺 在地圖開啟</a>' +
+          "</div>" +
+        "</div>" +
+      "</article>";
+  }
+  function renderAround() {
+    var el = document.getElementById("around-list");
+    if (!el || !window.AROUND) return;
+    el.innerHTML = window.AROUND.map(aroundCard).join("");
+  }
+
+  /* ---- 冷知識 Q&A ---- */
+  function renderTrivia() {
+    var el = document.getElementById("trivia-list");
+    if (!el || !window.TRIVIA) return;
+    el.innerHTML = window.TRIVIA.map(function (t) {
+      return "<details class=\"trivia\">" +
+        "<summary>" +
+          '<span class="tv-tag">' + esc(t.tag) + "</span>" +
+          '<span class="tv-q">' + esc(t.q) + "</span>" +
+        "</summary>" +
+        '<div class="tv-a"><p>' + esc(t.a) + "</p></div>" +
+      "</details>";
+    }).join("");
   }
 
   /* ---- 路線 ---- */
@@ -196,8 +241,19 @@
   renderRoute(ROUTES[0] && ROUTES[0].id);
   renderSpots();
   renderTimeline();
+  renderTrivia();
+  renderAround();
   updateProgress();
   bindEvents();
+
+  /* ---- 手機漢堡選單：點連結後自動收合（漸進增強）---- */
+  var navToggle = document.getElementById("nav-toggle");
+  var topnav = document.getElementById("topnav");
+  if (navToggle && topnav) {
+    topnav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) navToggle.checked = false;
+    });
+  }
 
   /* ---- Service Worker（離線） ---- */
   if ("serviceWorker" in navigator) {
